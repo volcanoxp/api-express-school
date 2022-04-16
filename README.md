@@ -1,0 +1,1 @@
+docker exec -i api-express-school_db_1 psql -U postgres -d school < database/tables.sql
