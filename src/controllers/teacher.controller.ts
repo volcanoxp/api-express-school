@@ -82,10 +82,10 @@ export const updateTeachers: Handler = async (req, res) => {
 
     const queryOldData = `
         SELECT
-        firstname,
-        lastname,
-        email,
-        phone
+            firstname,
+            lastname,
+            email,
+            phone
         FROM teacher
         WHERE id = ${id}
     `

@@ -26,7 +26,7 @@ export const getCourse: Handler = async (req, res) => {
     const query = `
         SELECT
             C.id AS courseId,
-            name 
+            name
         FROM course AS C
         WHERE C.status = true
             AND C.id = ${id}

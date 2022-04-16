@@ -73,6 +73,7 @@ export const createStudent: Handler = async (req, res) => {
         VALUES (${classroomId},
                 ${studentId})
     `
+    const responseBind: QueryResult = await pool.query(queryBind);
 
     return res.status(200).json({
         message: "added successfully",

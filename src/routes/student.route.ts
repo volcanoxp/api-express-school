@@ -1,4 +1,4 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
 import { getStudents, getStudent, createStudent, updateStudent, deleteStudent, changeClassroom } from '../controllers/student.controller';
 
 const router = Router();

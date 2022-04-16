@@ -30,17 +30,39 @@ export const getClassrooom: Handler = async (req, res) => {
         SELECT
             C.id AS classroomId,
             C.grade,
-            C.section
+            C.section,
+            CT.teacherId,
+            CONCAT(T.firstname,' ', T.lastname) AS teacherName 
         FROM classroom AS C
+        LEFT JOIN classroomTeacher AS CT ON CT.classroomId = C.id
+        LEFT JOIN teacher AS T ON T.id = CT.teacherId
         WHERE C.status = true
             AND C.id = ${id}
     `;
 
     const response: QueryResult = await pool.query(query);
 
+    let data = response.rows[0];
+
+    const queryStudent = `
+        SELECT
+        CS.studentid,
+        S.firstname,
+        S.lastname,
+        S.email,
+        S.phone
+        FROM classroomStudent AS CS
+        LEFT JOIN student AS S ON S.id = CS.studentId
+        WHERE  CS.classroomId = ${id}
+            AND S.status = true
+    `
+    const responseStudent: QueryResult = await pool.query(queryStudent);
+
+    data['students'] = responseStudent.rows;
+
     return res.status(200).json({
         message: "get successfully",
-        classroom: response.rows[0]
+        classroom: data
     });
 }
 

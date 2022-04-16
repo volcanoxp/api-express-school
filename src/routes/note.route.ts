@@ -1,7 +1,11 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+
+import { registerNote, getNotesCourse, getNotesStudent } from '../controllers/note.controller';
 
 const router = Router();
 
-router.get('/', (req: Request, res: Response) => res.send('hello'));
+router.post('/register', registerNote);
+router.get('/course/:courseId', getNotesCourse);
+router.get('/student/:studentId', getNotesStudent);
 
 export default router;
