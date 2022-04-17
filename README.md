@@ -13,3 +13,7 @@ api-express-school> docker-compose up -d
 ```
 api-express-school> docker exec -i api-express-school_db_1 psql -U postgres -d school < database/tables.sql
 ```
+4. Start testing the APIs
+```
+api-express-school> curl http://localhost:3001/test
+```

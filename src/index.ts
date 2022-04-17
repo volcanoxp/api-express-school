@@ -11,7 +11,7 @@ app.set('port', config.port);
 app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
-app.get('/test', (req, res) => {res.send("Test")});
+app.get('/test', (req, res) => {res.status(200).json({message: "successfully"})});
 
 routerApi(app);
 
