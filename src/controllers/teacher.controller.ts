@@ -64,7 +64,7 @@ export const createTeacher: Handler = async (req, res) => {
 
     const response: QueryResult = await pool.query(query);
 
-    return res.status(200).json({
+    return res.status(201).json({
         message: "added successfully",
         teacher: {
             id: response.rows[0].id,
@@ -109,7 +109,7 @@ export const updateTeachers: Handler = async (req, res) => {
 
     const response: QueryResult = await pool.query(query);
 
-    return res.status(200).json({
+    return res.status(201).json({
         message: "updated successfully",
         teacher: {
             id,
@@ -130,7 +130,7 @@ export const deleteTeachers: Handler = async (req, res) => {
 
     const response: QueryResult = await pool.query(query);
 
-    return res.status(200).json({
+    return res.status(201).json({
         message: "deleted successfully",
     });
 }

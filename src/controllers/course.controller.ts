@@ -51,7 +51,7 @@ export const newCourse: Handler = async (req, res) => {
 
     const response: QueryResult = await pool.query(query);
 
-    return res.status(200).json({
+    return res.status(201).json({
         message: "created successfully",
         course: {
             id: response.rows[0].id,
@@ -73,7 +73,7 @@ export const updateCourse: Handler = async (req, res) => {
 
     const response: QueryResult = await pool.query(query);
 
-    return res.status(200).json({
+    return res.status(201).json({
         message: "update successfully",
         course: {
             id, 
@@ -94,7 +94,7 @@ export const deleteCourse: Handler = async (req, res) => {
 
     const response: QueryResult = await pool.query(query);
 
-    return res.status(200).json({
+    return res.status(201).json({
         message: "delete successfully",
     });
 }

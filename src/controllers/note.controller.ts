@@ -34,7 +34,7 @@ export const registerNote: Handler = async (req, res) => {
     `
     const response: QueryResult = await pool.query(query);
 
-    return res.status(200).json({
+    return res.status(201).json({
         message: "update successfully",
         note: data
     });

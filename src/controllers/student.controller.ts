@@ -120,7 +120,7 @@ export const updateStudent: Handler = async (req, res) => {
 
     const response: QueryResult = await pool.query(query);
 
-    return res.status(200).json({
+    return res.status(201).json({
         message: "updated successfully",
         student: {
             id,
@@ -140,7 +140,7 @@ export const deleteStudent: Handler = async (req, res) => {
 
     const response: QueryResult = await pool.query(query);
 
-    return res.status(200).json({
+    return res.status(201).json({
         message: "deleted successfully",
     });
 }
@@ -156,7 +156,7 @@ export const changeClassroom: Handler = async (req, res) => {
     `
     const response: QueryResult = await pool.query(query);
 
-    return res.status(200).json({
+    return res.status(201).json({
         message: "changed classroom successfully",
     });
 

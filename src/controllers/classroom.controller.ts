@@ -89,7 +89,7 @@ export const createClassrooom: Handler = async (req, res) => {
     `
     const responseBind: QueryResult = await pool.query(queryBind);
 
-    return res.status(200).json({
+    return res.status(201).json({
         message: "added successfully",
         classroom: {
             id: classroomId,
@@ -128,7 +128,7 @@ export const updateClassrooom: Handler = async (req, res) => {
 
     const response: QueryResult = await pool.query(query);
 
-    return res.status(200).json({
+    return res.status(201).json({
         message: "updated successfully",
         classroom: {
             id,
@@ -148,7 +148,7 @@ export const deleteClassrooom: Handler = async (req, res) => {
 
     const response: QueryResult = await pool.query(query);
 
-    return res.status(200).json({
+    return res.status(201).json({
         message: "deleted successfully",
     });
 }
@@ -164,7 +164,7 @@ export const changeTeacher: Handler = async (req, res) => {
     `
     const response: QueryResult = await pool.query(query);
 
-    return res.status(200).json({
+    return res.status(201).json({
         message: "changed teacher successfully",
     });
 
