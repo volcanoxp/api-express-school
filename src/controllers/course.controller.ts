@@ -35,7 +35,7 @@ export const getCourse: Handler = async (req, res) => {
     const response: QueryResult = await pool.query(query);
 
     return res.status(200).json({
-        message: "update successfully",
+        message: "get successfully",
         data: response.rows[0]
     });
 }
