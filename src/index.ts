@@ -2,8 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import { routerApi } from './routes'; 
 import morgan from 'morgan';
+import { config } from './config/config';
 
 const app = express();
+app.set('port', config.port);
 
 // middlewares
 app.use(express.json());
@@ -13,5 +15,5 @@ app.get('/test', (req, res) => {res.send("Test")});
 
 routerApi(app);
 
-app.listen(3001);
-console.log("Listen on port 3001");
+app.listen(app.get('port'));
+console.log("Listen on port", app.get('port'));

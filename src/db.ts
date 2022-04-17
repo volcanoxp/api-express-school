@@ -1,9 +1,10 @@
 import { Pool } from 'pg';
+import { config } from './config/config';
 
 export const pool = new Pool({
-    host: "localhost",
-    database: "school",
-    user: "postgres",
-    password: "4gt.TcE.322",
-    port: 5436
+    host: config.dbHost,
+    database: config.dbName,
+    user: config.dbUser,
+    password: config.dbPassword,
+    port: config.dbPort
 });
