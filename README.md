@@ -17,3 +17,6 @@ api-express-school> docker exec -i api-express-school_db_1 psql -U postgres -d s
 ```
 api-express-school> curl http://localhost:3001/test
 ```
+
+## Documentation of API
+https://app.swaggerhub.com/apis/volcanoxp/api-school/1.0.0
